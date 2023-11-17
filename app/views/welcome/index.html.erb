@@ -4,17 +4,21 @@
     Centralizamos e organizamos as demandas aqui para permitir uma gestão mais ágil e transparente. Sua colaboração é fundamental para o sucesso de nossos esforços na promoção da igualdade e no combate à violência de gênero.
 </p>
 
-<ul>
-  <% @projects.each do |project| %>
-    <li>
-      <%= project.name %>
-      <ul>
-      <% project.issues.each do |issue| %>
-        <li><%= link_to issue.subject, issue_path(issue) %></li>
-        <li><%= issue.assigned_to %></li>
-        <li><%= issue.created_on %></li>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Assunto</th>
+      <th scope="col">Atribuído para</th>
+      <th scope="col">Criado em</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @project.issues.each do |issue| %>
+        <tr>
+          <td><%= link_to issue.subject, issue_path(issue) %></td>
+          <td><%= issue.assigned_to %></td>
+          <td><%= issue.created_on %></td>
+        </tr>
       <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
+  </tbody>
+</table>
