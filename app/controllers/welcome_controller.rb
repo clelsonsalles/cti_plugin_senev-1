@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
 
   def index
     @news = News.latest User.current
-    @project = Project.where(name: 'CAIXA DE ENTRADA').first
+    @projects = User.current.projects.to_a
   end
 
   def robots
