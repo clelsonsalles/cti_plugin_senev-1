@@ -1,4 +1,4 @@
-Redmine::Plugin.register :plugin_agenda_mulheres do
+Redmine::Plugin.register :cti_plugin_senev do
   name 'Plugin Agenda Mulheres plugin'
   author 'Author name'
   description 'This is a plugin for Redmine'
